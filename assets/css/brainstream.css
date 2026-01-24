@@ -104,29 +104,32 @@ img {
 /* UPDATED HEADER TITLE STYLES */
 .brand-title {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  font-family: "Recharge", sans-serif;
-  font-weight: 700;
-  line-height: 1.05;
-  text-transform: uppercase;
+  align-items: center;
 }
 
-.brand-main {
-  font-size: 1rem;
-  letter-spacing: 0.08em;
+.wordmark {
+  width: 180px;
+  height: auto;
+  display: block;
 }
 
-.brand-sub {
-  font-size: 0.75em;
-  letter-spacing: 0.14em;
+.wordmark-light {
+  display: none;
+}
+
+[data-theme="light"] .wordmark-light {
+  display: block;
+}
+
+[data-theme="light"] .wordmark-dark {
+  display: none;
 }
 
 nav {
   display: flex;
   align-items: center;
   gap: 18px;
-  font-size: 0.95rem;
+  font-size: 0.86rem;
   color: var(--muted);
 }
 
@@ -207,24 +210,21 @@ main {
 
 .hero h1 {
   font-family: "Recharge", sans-serif;
-  font-size: clamp(1.1rem, 1.75vw, 1.75rem);
+  font-size: clamp(1.265rem, 2.0125vw, 2.0125rem);
   line-height: 1.1;
   margin-bottom: 18px;
 }
 
 .hero p {
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
 }
 
-.hero-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background: var(--surface-strong);
-  border-radius: 20px;
-  border: 1px solid var(--border);
+.hero-image {
+  justify-self: center;
+  max-height: min(200px, 100%);
+  width: auto;
+  height: auto;
 }
 
 section {
@@ -239,6 +239,7 @@ section h2 {
 
 .section-lead {
   color: var(--muted);
+  font-size: 0.9rem;
   margin-bottom: 28px;
 }
 
@@ -278,6 +279,7 @@ section h2 {
 
 .card p {
   color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .card a {
@@ -299,6 +301,7 @@ section h2 {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 14px;
+  font-size: 0.9rem;
 }
 
 .list-link {
@@ -327,6 +330,7 @@ section h2 {
   border: 1px solid var(--border);
   padding: 28px;
   color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .about-links {
@@ -343,6 +347,7 @@ section h2 {
   border-top: 1px solid var(--border);
   padding: 24px 0 32px;
   color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .footer-inner {
@@ -357,6 +362,9 @@ section h2 {
   flex-wrap: wrap;
   gap: 16px;
   color: var(--text);
+  align-self: flex-end;
+  margin-left: auto;
+  text-align: right;
 }
 
 .social-links {
@@ -382,6 +390,8 @@ section h2 {
 .social-icon {
   width: 18px;
   height: 18px;
+  flex: 0 0 18px;
+  object-fit: contain;
 }
 
 .icon-light {
