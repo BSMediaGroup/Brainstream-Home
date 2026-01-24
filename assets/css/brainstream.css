@@ -269,32 +269,24 @@ main {
 
 .brand-gradient:hover {
   background-image: linear-gradient(135deg, #8c79ff 0%, #d38bff 100%),
-    linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(248, 236, 255, 0.5) 40%, rgba(255, 255, 255, 0.9) 50%, rgba(248, 236, 255, 0.5) 60%, rgba(255, 255, 255, 0) 100%);
-  background-size: 200% 100%, 140% 100%;
-  background-position: 0% 50%, -140% 50%;
-  animation: brand-gradient-sheen 2.4s ease-in-out infinite;
-  text-shadow: none;
+    linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(248, 236, 255, 0.35) 35%, rgba(255, 255, 255, 0.85) 50%, rgba(248, 236, 255, 0.35) 65%, rgba(255, 255, 255, 0) 100%);
+  background-size: 200% 100%, 320% 100%;
+  background-position: 0% 50%, -160% 50%;
+  animation: brand-gradient-sheen 2.2s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(220, 190, 255, 0.35), 0 0 18px rgba(200, 170, 255, 0.22);
 }
 
 @keyframes brand-gradient-sheen {
   0% {
-    background-position: 0% 50%, -140% 50%;
-    text-shadow: none;
+    background-position: 0% 50%, -160% 50%;
   }
 
-  40% {
-    background-position: 0% 50%, 120% 50%;
-    text-shadow: 0 0 10px rgba(220, 190, 255, 0.28), 0 0 16px rgba(220, 190, 255, 0.18);
-  }
-
-  50% {
-    background-position: 0% 50%, 120% 50%;
-    text-shadow: none;
+  45% {
+    background-position: 0% 50%, 160% 50%;
   }
 
   100% {
-    background-position: 0% 50%, 120% 50%;
-    text-shadow: none;
+    background-position: 0% 50%, 160% 50%;
   }
 }
 
@@ -305,7 +297,7 @@ main {
 
   .brand-gradient:hover {
     animation: none;
-    background-position: 0% 50%;
+    background-position: 0% 50%, 0% 50%;
   }
 }
 
