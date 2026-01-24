@@ -1,1 +1,145 @@
-Brainstream Media Group™
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brainstream Media</title>
+  <meta name="description" content="Brainstream Media is the creative studio and parent company behind StreamSuites, podcast networks, and professional services." />
+  <link rel="icon" href="assets/icons/xbsmgmainx1.ico" />
+  <link rel="stylesheet" href="assets/css/brainstream.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="page header-inner">
+      <div class="brand">
+        <img src="assets/logos/xbsmgx.svg" alt="Brainstream Media logo" />
+        <div class="brand-title">Brainstream Media</div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#network">Network</a>
+        <a href="#about">About</a>
+        <button class="toggle" type="button" id="theme-toggle" aria-pressed="false">Light Mode</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page">
+      <section class="hero" id="top">
+        <div>
+          <h1>Brainstream Media is the creative studio and parent company behind bold media systems.</h1>
+          <p>
+            We orchestrate product platforms, podcast networks, and professional services with a single
+            directive: build brands that endure. Brainstream Media oversees StreamSuites™ and a growing
+            portfolio of creator-forward experiences.
+          </p>
+        </div>
+        <div class="hero-logo">
+          <img src="assets/logos/xbsmgmainx1.svg" alt="Brainstream Media Group logo" />
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects &amp; Products</h2>
+        <p class="section-lead">Focused products, refined media, and professional presence—each aligned under Brainstream Media.</p>
+        <div class="grid">
+          <article class="card">
+            <img src="assets/logos/logocircle.png" alt="StreamSuites logo" />
+            <h3>StreamSuites™</h3>
+            <p>Creator workflow system for channel operations, publishing, and community engagement.</p>
+            <a href="https://streamsuites.com" target="_blank" rel="noreferrer">Visit StreamSuites</a>
+          </article>
+          <article class="card">
+            <img src="assets/logos/xbsmgmainx1.svg" alt="Brainstream Media studio logo" />
+            <h3>Brainstream Studio</h3>
+            <p>Creative direction, brand systems, and media operations for long-term growth.</p>
+            <a href="https://brainstream.media" target="_blank" rel="noreferrer">Explore Studio</a>
+          </article>
+          <article class="card">
+            <img src="assets/logos/DCX.svg" alt="DanielClancy.net logo" />
+            <h3>DanielClancy.net</h3>
+            <p>Personal media presence covering creative direction, writing, and digital initiatives.</p>
+            <a href="https://danielclancy.net" target="_blank" rel="noreferrer">View Profile</a>
+          </article>
+          <article class="card">
+            <img src="assets/logos/dclive.svg" alt="DanielClancy.live logo" />
+            <h3>DanielClancy.live</h3>
+            <p>Professional drafting portfolio and CV for consulting, systems, and design leadership.</p>
+            <a href="https://danielclancy.live" target="_blank" rel="noreferrer">View CV</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="network">
+        <h2>Network &amp; Client Sites</h2>
+        <p class="section-lead">A curated network of partner and client properties supported by Brainstream Media.</p>
+        <div class="list">
+          <div class="list-item">
+            <span>thirdrailify.com</span>
+            <span class="tag">Live</span>
+          </div>
+          <div class="list-item">
+            <span>simpledavy.com</span>
+            <span class="tag">Under Construction</span>
+          </div>
+          <div class="list-item">
+            <span>lebelletzu.com</span>
+            <span class="tag">Live</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>About Daniel Clancy</h2>
+        <div class="about">
+          <p>
+            Daniel Clancy is the founder, creator, and lead developer behind Brainstream Media. He
+            architects digital systems that connect brand identity, product strategy, and community
+            infrastructure. Brainstream Media serves as the umbrella entity that unites these projects
+            into a cohesive, long-term media studio.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page footer-inner">
+      <div>Brainstream Media © 2024</div>
+      <div class="footer-links">
+        <a href="#projects">Projects</a>
+        <a href="#network">Network</a>
+        <a href="#about">About</a>
+        <a href="https://brainstream.media" target="_blank" rel="noreferrer">brainstream.media</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const toggleButton = document.getElementById("theme-toggle");
+    const storedTheme = localStorage.getItem("theme");
+
+    const setTheme = (theme) => {
+      if (theme === "light") {
+        root.setAttribute("data-theme", "light");
+        toggleButton.textContent = "Dark Mode";
+        toggleButton.setAttribute("aria-pressed", "true");
+      } else {
+        root.removeAttribute("data-theme");
+        toggleButton.textContent = "Light Mode";
+        toggleButton.setAttribute("aria-pressed", "false");
+      }
+    };
+
+    setTheme(storedTheme || "dark");
+
+    toggleButton.addEventListener("click", () => {
+      const nextTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      localStorage.setItem("theme", nextTheme);
+      setTheme(nextTheme);
+    });
+  </script>
+</body>
+</html>
