@@ -265,8 +265,10 @@ main {
 }
 
 .brand-gradient:hover {
+  background: linear-gradient(135deg, #8c79ff 0%, #d38bff 42%, #f0ccff 52%, #d38bff 62%, #8c79ff 100%);
+  background-size: 240% 100%;
   background-position: 100% 50%;
-  text-shadow: 0 0 14px rgba(141, 121, 255, 0.35), 0 0 24px rgba(211, 139, 255, 0.2);
+  text-shadow: 0 0 14px rgba(216, 176, 255, 0.35), 0 0 24px rgba(216, 176, 255, 0.2);
 }
 
 @media (prefers-reduced-motion: reduce) {
