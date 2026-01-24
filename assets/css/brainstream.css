@@ -101,11 +101,25 @@ img {
   height: 48px;
 }
 
+/* UPDATED HEADER TITLE STYLES */
 .brand-title {
-  font-family: "Recharge", sans-serif;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+}
+
+.brand-main {
+  font-family: "Recharge", sans-serif;
   font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+.brand-sub {
+  font-family: "SuiGeneris", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  opacity: 0.75;
 }
 
 nav {
