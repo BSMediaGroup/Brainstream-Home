@@ -252,6 +252,14 @@ main {
   margin-bottom: 18px;
 }
 
+.brand-gradient {
+  background: linear-gradient(135deg, #b06cff 0%, #8c79ff 50%, #d38bff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(141, 121, 255, 0.25);
+}
+
 .hero p {
   color: var(--muted);
   font-size: 0.95rem;
