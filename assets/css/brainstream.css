@@ -124,9 +124,8 @@ img {
   text-transform: uppercase;
 }
 
-.brand-main {
-  font-size: 1rem;
-  letter-spacing: 0.08em;
+.wordmark-light {
+  display: none;
 }
 
 .brand-sub {
