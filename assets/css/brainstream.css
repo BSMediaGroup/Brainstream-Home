@@ -265,8 +265,24 @@ main {
 }
 
 .brand-gradient:hover {
-  background-position: 100% 50%;
-  text-shadow: 0 0 14px rgba(141, 121, 255, 0.35), 0 0 24px rgba(211, 139, 255, 0.2);
+  background-image: linear-gradient(135deg, #8c79ff 0%, #d38bff 42%, #f0ccff 52%, #d38bff 62%, #8c79ff 100%);
+  background-size: 240% 100%;
+  animation: brand-gradient-sheen 1.9s ease-in-out infinite;
+  text-shadow: 0 0 14px rgba(216, 176, 255, 0.35), 0 0 24px rgba(216, 176, 255, 0.2);
+}
+
+@keyframes brand-gradient-sheen {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  37% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -275,6 +291,7 @@ main {
   }
 
   .brand-gradient:hover {
+    animation: none;
     background-position: 0% 50%;
   }
 }
