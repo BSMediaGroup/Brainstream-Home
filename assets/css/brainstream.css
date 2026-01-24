@@ -55,6 +55,7 @@ body {
   color: var(--text);
   min-height: 100vh;
   line-height: 1.6;
+  font-size: 0.9rem;
 }
 
 a {
@@ -68,7 +69,7 @@ img {
 }
 
 .page {
-  max-width: 1100px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -81,6 +82,7 @@ img {
   background: linear-gradient(180deg, var(--bg) 10%, rgba(10, 12, 18, 0) 100%);
   padding: 16px 0 20px;
   backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
 }
 
 .header-inner {
@@ -101,11 +103,21 @@ img {
   height: 48px;
 }
 
-/* UPDATED HEADER TITLE STYLES */
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-link:hover,
+.brand-link:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
 .brand-title {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   font-family: "Recharge", sans-serif;
   font-weight: 700;
   line-height: 1.05;
@@ -118,15 +130,29 @@ img {
 }
 
 .brand-sub {
+  font-family: "SuiGeneris", system-ui, -apple-system, sans-serif;
   font-size: 0.75em;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.2em;
+  text-align: center;
+  padding: 4px 8px;
+  margin-top: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+[data-theme="light"] .brand-sub {
+  background: rgba(20, 24, 36, 0.06);
 }
 
 nav {
   display: flex;
   align-items: center;
   gap: 18px;
-  font-size: 0.95rem;
+  font-size: 0.86rem;
   color: var(--muted);
 }
 
@@ -207,24 +233,21 @@ main {
 
 .hero h1 {
   font-family: "Recharge", sans-serif;
-  font-size: clamp(1.1rem, 1.75vw, 1.75rem);
+  font-size: clamp(1.3rem, 2.1vw, 2.1rem);
   line-height: 1.1;
   margin-bottom: 18px;
 }
 
 .hero p {
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
 }
 
-.hero-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background: var(--surface-strong);
-  border-radius: 20px;
-  border: 1px solid var(--border);
+.hero-image {
+  justify-self: center;
+  max-height: 180px;
+  width: auto;
+  height: auto;
 }
 
 section {
@@ -239,6 +262,7 @@ section h2 {
 
 .section-lead {
   color: var(--muted);
+  font-size: 0.9rem;
   margin-bottom: 28px;
 }
 
@@ -278,6 +302,7 @@ section h2 {
 
 .card p {
   color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .card a {
@@ -299,6 +324,7 @@ section h2 {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 14px;
+  font-size: 0.9rem;
 }
 
 .list-link {
@@ -327,6 +353,7 @@ section h2 {
   border: 1px solid var(--border);
   padding: 28px;
   color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .about-links {
@@ -343,6 +370,7 @@ section h2 {
   border-top: 1px solid var(--border);
   padding: 24px 0 32px;
   color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .footer-inner {
@@ -357,6 +385,9 @@ section h2 {
   flex-wrap: wrap;
   gap: 16px;
   color: var(--text);
+  align-self: flex-end;
+  margin-left: auto;
+  text-align: right;
 }
 
 .social-links {
@@ -382,6 +413,8 @@ section h2 {
 .social-icon {
   width: 18px;
   height: 18px;
+  flex: 0 0 18px;
+  object-fit: contain;
 }
 
 .icon-light {
