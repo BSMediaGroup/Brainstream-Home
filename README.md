@@ -6,7 +6,6 @@ Public landing page for Brainstream Media Group™
 .
 ├── CNAME
 ├── README.md
-├── Thumbs.db
 ├── assets
 │   ├── backgrounds
 │   ├── css
