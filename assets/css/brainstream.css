@@ -241,7 +241,7 @@ main {
 
 .hero h1 {
   font-family: "Recharge", sans-serif;
-  font-size: clamp(1.3rem, 2.1vw, 2.1rem);
+  font-size: clamp(1.3rem, 2.4vw, 2.4rem);
   line-height: 1.1;
   margin-bottom: 18px;
 }
@@ -257,7 +257,7 @@ main {
   height: 100%;
   max-height: 100%;
   width: 100%;
-  max-width: 100%;
+  max-width: 380px;
   object-fit: contain;
 }
 
