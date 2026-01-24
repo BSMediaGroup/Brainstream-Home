@@ -105,21 +105,21 @@ img {
 .brand-title {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
+  align-items: flex-start;
+  font-family: "Recharge", sans-serif;
+  font-weight: 700;
+  line-height: 1.05;
   text-transform: uppercase;
 }
 
 .brand-main {
-  font-family: "Recharge", sans-serif;
   font-size: 1rem;
   letter-spacing: 0.08em;
 }
 
 .brand-sub {
-  font-family: "SuiGeneris", sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.85em;
   letter-spacing: 0.14em;
-  opacity: 0.75;
 }
 
 nav {
