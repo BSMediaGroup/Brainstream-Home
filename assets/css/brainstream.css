@@ -141,6 +141,9 @@ img {
   color: var(--muted);
   width: 100%;
   box-sizing: border-box;
+  display: inline-block;
+  transform: scaleX(1.15);
+  transform-origin: center;
 }
 
 [data-theme="light"] .brand-sub {
@@ -253,7 +256,8 @@ main {
   align-self: stretch;
   height: 100%;
   max-height: 100%;
-  width: auto;
+  width: 100%;
+  max-width: 100%;
   object-fit: contain;
 }
 
@@ -382,19 +386,25 @@ section h2 {
 
 .footer-inner {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
   align-items: flex-start;
+  gap: 24px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
   color: var(--text);
-  align-self: flex-end;
-  margin-left: auto;
-  text-align: right;
+  align-self: flex-start;
+  margin-left: 0;
+  text-align: left;
 }
 
 .social-links {
@@ -402,6 +412,7 @@ section h2 {
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .social-link {
@@ -424,6 +435,12 @@ section h2 {
   object-fit: contain;
 }
 
+.linkedin-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+}
+
 .icon-light {
   display: none;
 }
@@ -444,6 +461,15 @@ section h2 {
 
   nav {
     flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .social-links {
     justify-content: flex-start;
   }
 }
