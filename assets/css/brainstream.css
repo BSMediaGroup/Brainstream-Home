@@ -446,6 +446,40 @@ section {
   }
 }
 
+.site-search {
+  --search-input-bg: rgba(0, 0, 0, 0.2);
+  --search-input-border: rgba(255, 255, 255, 0.28);
+  --search-input-border-focus: rgba(255, 255, 255, 0.45);
+  --search-input-shadow-strong: rgba(140, 121, 255, 0.28);
+  --search-input-shadow-soft: rgba(140, 121, 255, 0.16);
+}
+
+[data-theme="light"] .site-search {
+  --search-input-bg: rgba(255, 255, 255, 0.2);
+  --search-input-border: rgba(20, 24, 36, 0.18);
+  --search-input-border-focus: rgba(20, 24, 36, 0.28);
+  --search-input-shadow-strong: rgba(76, 62, 255, 0.18);
+  --search-input-shadow-soft: rgba(76, 62, 255, 0.12);
+}
+
+.site-search .pagefind-ui__search-input {
+  background: var(--search-input-bg);
+  background-color: var(--search-input-bg);
+  border-radius: 10px;
+  border: 2px solid var(--search-input-border);
+  box-shadow: 20px 20px 60px var(--search-input-shadow-strong),
+    -20px -20px 60px var(--search-input-shadow-soft);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  transition: none;
+}
+
+.site-search .pagefind-ui__search-input:focus,
+.site-search .pagefind-ui__search-input:focus-visible {
+  border-color: var(--search-input-border-focus);
+  outline: none;
+}
+
 .site-search .pagefind-ui__search-clear {
   border-radius: 999px;
   border: 1px solid var(--border);
