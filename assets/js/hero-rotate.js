@@ -15,7 +15,7 @@
   const heroSlides = [
     {
       key: "brainstream",
-      imageSrc: "assets/illustrations/bsmgshine.webp",
+      imageSrc: "assets/illustrations/bsmgmetal.webp",
       tagline: "Creator-first media systems, engineered for longevity.",
       accent: null
     },
