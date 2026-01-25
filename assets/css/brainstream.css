@@ -861,3 +861,59 @@ section h2 {
     justify-content: flex-start;
   }
 }
+
+/* === Pagefind Clear Button (final override, must be last in file) === */
+.pagefind-ui .pagefind-ui__form {
+  position: relative;
+}
+
+/* Anchor + reset (drift-safe) */
+.pagefind-ui .pagefind-ui__form > button.pagefind-ui__search-clear {
+  position: absolute !important;
+  top: 50% !important;
+  right: 12px !important;
+  transform: translateY(-50%) !important;
+
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  /* kill label visually (Pagefind may re-render the text) */
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  text-indent: -9999px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+
+  /* paint icon on the actual button (no pseudo-elements) */
+  background-image: url("/assets/icons/ui/clear.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 18px 18px !important;
+
+  cursor: pointer !important;
+  z-index: 3 !important;
+}
+
+/* Dark mode: make SVG appear light */
+:root .pagefind-ui .pagefind-ui__form > button.pagefind-ui__search-clear {
+  filter: brightness(0) invert(1) !important;
+  opacity: 0.75 !important;
+}
+
+/* Light mode: keep SVG dark */
+[data-theme="light"] .pagefind-ui .pagefind-ui__form > button.pagefind-ui__search-clear {
+  filter: none !important;
+  opacity: 0.65 !important;
+}
+
+.pagefind-ui .pagefind-ui__form > button.pagefind-ui__search-clear:hover,
+.pagefind-ui .pagefind-ui__form > button.pagefind-ui__search-clear:focus-visible {
+  opacity: 1 !important;
+}
