@@ -530,6 +530,48 @@ section {
   background-color: var(--text);
 }
 
+/* --- HARD OVERRIDE: Pagefind clear button --- */
+.site-search .pagefind-ui__search-clear {
+  position: absolute !important;
+  top: 50% !important;
+  right: 12px !important;
+  transform: translateY(-50%) !important;
+  width: 28px !important;
+  height: 28px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  text-indent: -9999px;
+  overflow: hidden;
+  background-image: url("/assets/icons/ui/clear.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+  cursor: pointer;
+}
+
+.site-search .pagefind-ui__search-clear::before {
+  content: none !important;
+}
+
+:root .site-search .pagefind-ui__search-clear {
+  filter: brightness(0) invert(1) opacity(0.75);
+}
+
+[data-theme="light"] .site-search .pagefind-ui__search-clear {
+  filter: none;
+  opacity: 0.6;
+}
+
+.site-search .pagefind-ui__search-clear:hover {
+  opacity: 1;
+}
+
 .site-search .pagefind-ui__results {
   margin-top: 18px;
 }
