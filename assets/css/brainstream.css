@@ -487,23 +487,32 @@ section {
   outline: none;
 }
 
-.site-search .pagefind-ui__search-clear {
-  font-size: 0;
-  line-height: 0;
-  color: transparent;
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  min-width: 0;
-  height: auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.site-search .pagefind-ui__search-clear,
+.site-search .pagefind-ui__search-clear * {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  min-width: 0 !important;
+  height: auto !important;
+  width: 24px !important;
+  height: 24px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.site-search .pagefind-ui__search-clear * {
+  display: none !important;
 }
 
 .site-search .pagefind-ui__search-clear::before {
   content: "×";
+  display: block;
   font-size: 16px;
   font-weight: 400;
   line-height: 1;
@@ -511,14 +520,14 @@ section {
   pointer-events: none;
 }
 
-.site-search .pagefind-ui__search-clear:hover,
-.site-search .pagefind-ui__search-clear:focus {
-  color: transparent;
-  outline: none;
+.site-search .pagefind-ui__search-clear:focus-visible {
+  outline: 2px solid var(--border);
+  outline-offset: 2px;
 }
 
 .site-search .pagefind-ui__search-clear:hover::before,
-.site-search .pagefind-ui__search-clear:focus::before {
+.site-search .pagefind-ui__search-clear:focus::before,
+.site-search .pagefind-ui__search-clear:focus-visible::before {
   color: var(--text);
 }
 
@@ -554,10 +563,14 @@ section {
   line-height: 1.5;
 }
 
-.site-search .pagefind-ui__message {
-  font-family: "SuiGeneris", system-ui, -apple-system, sans-serif;
-  font-size: 0.85rem;
+.site-search .pagefind-ui__message,
+.site-search .pagefind-ui__results-title,
+.site-search .pagefind-ui__results-info,
+.site-search .pagefind-ui__results-count {
+  font-family: "SuiGeneris", system-ui, -apple-system, sans-serif !important;
+  font-weight: 400;
   color: var(--muted);
+  font-size: 0.85rem;
 }
 
 .site-search .pagefind-ui__result-url,
