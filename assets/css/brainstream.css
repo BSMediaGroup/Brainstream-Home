@@ -511,12 +511,15 @@ section {
 }
 
 .site-search .pagefind-ui__search-clear::before {
-  content: "×";
+  content: "";
   display: block;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1;
-  color: var(--muted);
+  width: 18px;
+  height: 18px;
+  background-color: var(--muted);
+  -webkit-mask: url("../icons/ui/clear.svg") no-repeat center;
+  mask: url("../icons/ui/clear.svg") no-repeat center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
   pointer-events: none;
 }
 
@@ -528,7 +531,7 @@ section {
 .site-search .pagefind-ui__search-clear:hover::before,
 .site-search .pagefind-ui__search-clear:focus::before,
 .site-search .pagefind-ui__search-clear:focus-visible::before {
-  color: var(--text);
+  background-color: var(--text);
 }
 
 .site-search .pagefind-ui__results {
