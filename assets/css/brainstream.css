@@ -493,83 +493,65 @@ section {
   outline: none;
 }
 
-.site-search .pagefind-ui__search-clear {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  padding: 0;
-  margin: 0;
-  background: none;
-  border: 0;
-  border-radius: 0;
-  cursor: pointer;
-  opacity: 0.75;
-  font-size: 0;
-  line-height: 0;
+/* === Pagefind clear button (canonical) === */
+.site-search .pagefind-ui__form {
+  position: relative;
 }
 
-.site-search .pagefind-ui__search-clear:hover,
-.site-search .pagefind-ui__search-clear:focus {
-  opacity: 1;
-}
-
-.site-search .pagefind-ui__search-clear::before {
-  content: "";
-  display: block;
+.site-search .search-input-wrap {
+  position: relative;
   width: 100%;
-  height: 100%;
-  background-color: var(--text);
-  -webkit-mask: url("/assets/icons/ui/clear.svg") no-repeat center / contain;
-  mask: url("/assets/icons/ui/clear.svg") no-repeat center / contain;
 }
 
-[data-theme="light"] .site-search .pagefind-ui__search-clear::before {
-  background-color: var(--text);
+.site-search .search-input-wrap .pagefind-ui__search-input {
+  width: 100%;
+  padding-right: 52px;
 }
 
-/* --- HARD OVERRIDE: Pagefind clear button --- */
-.site-search .pagefind-ui__search-clear {
+.site-search .search-input-wrap .pagefind-ui__search-clear {
   position: absolute !important;
   top: 50% !important;
-  right: 12px !important;
+  right: 14px !important;
   transform: translateY(-50%) !important;
-  width: 28px !important;
-  height: 28px !important;
+
+  width: 32px !important;
+  height: 32px !important;
+
   padding: 0 !important;
   margin: 0 !important;
-  border: none !important;
-  background-color: transparent !important;
+
+  border: 0 !important;
+  background: transparent !important;
   box-shadow: none !important;
+
   font-size: 0 !important;
   line-height: 0 !important;
   color: transparent !important;
-  text-indent: -9999px;
-  overflow: hidden;
-  background-image: url("/assets/icons/ui/clear.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 16px 16px;
-  cursor: pointer;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+
+  background-image: url("/assets/icons/ui/clear.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 18px 18px !important;
+
+  cursor: pointer !important;
+  opacity: 0.75 !important;
+  z-index: 3 !important;
 }
 
-.site-search .pagefind-ui__search-clear::before {
-  content: none !important;
+:root .site-search .search-input-wrap .pagefind-ui__search-clear {
+  filter: brightness(0) invert(1) !important;
 }
 
-:root .site-search .pagefind-ui__search-clear {
-  filter: brightness(0) invert(1) opacity(0.75);
+[data-theme="light"] .site-search .search-input-wrap .pagefind-ui__search-clear {
+  filter: none !important;
 }
 
-[data-theme="light"] .site-search .pagefind-ui__search-clear {
-  filter: none;
-  opacity: 0.6;
-}
-
-.site-search .pagefind-ui__search-clear:hover {
-  opacity: 1;
+.site-search .search-input-wrap .pagefind-ui__search-clear:hover,
+.site-search .search-input-wrap .pagefind-ui__search-clear:focus-visible {
+  opacity: 1 !important;
 }
 
 .site-search .pagefind-ui__results {
@@ -862,77 +844,3 @@ section h2 {
   }
 }
 
-/* === Pagefind Clear Button (final override, must be last in file) === */
-.pagefind-ui .pagefind-ui__form {
-  position: relative;
-}
-
-/* Anchor + reset (drift-safe) */
-.pagefind-ui .pagefind-ui__form > button.pagefind-ui__search-clear {
-  position: absolute !important;
-  top: 50% !important;
-  right: 12px !important;
-  transform: translateY(-50%) !important;
-
-  width: 32px !important;
-  height: 32px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-
-  border: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-
-  /* kill label visually (Pagefind may re-render the text) */
-  font-size: 0 !important;
-  line-height: 0 !important;
-  color: transparent !important;
-  text-indent: -9999px !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-
-  /* paint icon on the actual button (no pseudo-elements) */
-  background-image: url("/assets/icons/ui/clear.svg") !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: 18px 18px !important;
-
-  cursor: pointer !important;
-  z-index: 3 !important;
-}
-
-/* Dark mode: make SVG appear light */
-:root .pagefind-ui .pagefind-ui__form > button.pagefind-ui__search-clear {
-  filter: brightness(0) invert(1) !important;
-  opacity: 0.75 !important;
-}
-
-/* Light mode: keep SVG dark */
-[data-theme="light"] .pagefind-ui .pagefind-ui__form > button.pagefind-ui__search-clear {
-  filter: none !important;
-  opacity: 0.65 !important;
-}
-
-.pagefind-ui .pagefind-ui__form > button.pagefind-ui__search-clear:hover,
-.pagefind-ui .pagefind-ui__form > button.pagefind-ui__search-clear:focus-visible {
-  opacity: 1 !important;
-}
-
-/* --- Stable wrapper for Pagefind input + clear --- */
-.search-input-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-}
-
-.search-input-wrap .pagefind-ui__search-input {
-  width: 100%;
-  padding-right: 48px;
-}
-
-.search-input-wrap .pagefind-ui__search-clear {
-  position: absolute !important;
-  top: 50% !important;
-  right: 14px !important;
-  transform: translateY(-50%) !important;
-}

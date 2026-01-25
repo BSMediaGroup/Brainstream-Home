@@ -39,27 +39,45 @@
           },
         });
 
-        const wrapSearchControls = () => {
+        const ensureSearchWrap = () => {
           const form = document.querySelector(".pagefind-ui__form");
-          const input = form?.querySelector(".pagefind-ui__search-input");
-          const clear = form?.querySelector(".pagefind-ui__search-clear");
+          if (!form) return;
 
-          if (!form || !input || !clear) return;
+          const input = form.querySelector(
+            ":scope > .pagefind-ui__search-input, :scope > input.pagefind-ui__search-input",
+          );
+          const clear = form.querySelector(
+            ":scope > .pagefind-ui__search-clear, :scope > button.pagefind-ui__search-clear",
+          );
+          const drawer = form.querySelector(":scope > .pagefind-ui__drawer");
 
-          if (input.parentElement?.classList.contains("search-input-wrap")) return;
+          const anyInput = input || form.querySelector(".pagefind-ui__search-input");
+          const anyClear = clear || form.querySelector(".pagefind-ui__search-clear");
+          if (!anyInput || !anyClear) return;
 
-          const wrap = document.createElement("div");
-          wrap.className = "search-input-wrap";
+          let wrap = form.querySelector(":scope > .search-input-wrap");
+          if (!wrap) {
+            wrap = document.createElement("div");
+            wrap.className = "search-input-wrap";
+            if (drawer) form.insertBefore(wrap, drawer);
+            else form.appendChild(wrap);
+          }
 
-          input.before(wrap);
-          wrap.appendChild(input);
-          wrap.appendChild(clear);
+          if (anyInput.parentElement !== wrap) wrap.appendChild(anyInput);
+          if (anyClear.parentElement !== wrap) wrap.appendChild(anyClear);
+
+          if (drawer && drawer.previousElementSibling !== wrap) {
+            form.insertBefore(wrap, drawer);
+          }
         };
 
-        const observer = new MutationObserver(wrapSearchControls);
-        observer.observe(document.body, { childList: true, subtree: true });
+        ensureSearchWrap();
 
-        wrapSearchControls();
+        const pfObserver = new MutationObserver(() => ensureSearchWrap());
+        pfObserver.observe(document.getElementById("search") || document.body, {
+          childList: true,
+          subtree: true,
+        });
       } catch (error) {
         return;
       }
