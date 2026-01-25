@@ -462,6 +462,22 @@ section {
   --search-input-shadow-soft: rgba(76, 62, 255, 0.12);
 }
 
+.site-search .pagefind-ui {
+  --pagefind-ui-background: rgba(0, 0, 0, 0.2);
+  --pagefind-ui-border: rgba(255, 255, 255, 0.28);
+  --pagefind-ui-text: var(--text);
+  --pagefind-ui-primary: var(--accent);
+  --pagefind-ui-border-radius: 10px;
+}
+
+[data-theme="light"] .site-search .pagefind-ui {
+  --pagefind-ui-background: rgba(255, 255, 255, 0.2);
+  --pagefind-ui-border: rgba(20, 24, 36, 0.18);
+  --pagefind-ui-text: var(--text);
+  --pagefind-ui-primary: var(--accent);
+  --pagefind-ui-border-radius: 10px;
+}
+
 .site-search .pagefind-ui__search-input {
   background: var(--search-input-bg);
   background-color: var(--search-input-bg);
@@ -490,8 +506,8 @@ section {
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--text);
-  font-size: 0;
-  line-height: 0;
+  font-size: 0 !important;
+  line-height: 0 !important;
 }
 
 .site-search .pagefind-ui__search-clear::before {
