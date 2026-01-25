@@ -371,6 +371,106 @@ section {
   margin-top: 60px;
 }
 
+.site-search {
+  margin-top: 36px;
+}
+
+.site-search-inner {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 22px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: rgba(12, 16, 28, 0.65);
+  backdrop-filter: blur(16px);
+}
+
+[data-theme="light"] .site-search-inner {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+#search {
+  width: 100%;
+}
+
+.site-search .pagefind-ui__form {
+  margin: 0;
+  gap: 12px;
+}
+
+.site-search .pagefind-ui__search-input {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  color: var(--text);
+  padding: 14px 18px;
+  font-family: "SuiGeneris", system-ui, -apple-system, sans-serif;
+}
+
+.site-search .pagefind-ui__search-input::placeholder {
+  color: var(--muted);
+}
+
+.site-search .pagefind-ui__search-clear {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.site-search .pagefind-ui__results {
+  margin-top: 18px;
+}
+
+.site-search .pagefind-ui__result {
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+}
+
+.site-search .pagefind-ui__result:last-child {
+  border-bottom: 0;
+}
+
+.site-search .pagefind-ui__result-link {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.site-search .pagefind-ui__result-link:hover,
+.site-search .pagefind-ui__result-link:focus {
+  color: var(--accent);
+}
+
+.site-search .pagefind-ui__result-excerpt {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-search .pagefind-ui__result-url,
+.site-search .pagefind-ui__result-tags,
+.site-search .pagefind-ui__result-thumb {
+  display: none;
+}
+
+.pagefind-reduced-motion .pagefind-ui__form,
+.pagefind-reduced-motion .pagefind-ui__results,
+.pagefind-reduced-motion .pagefind-ui__result,
+.pagefind-reduced-motion .pagefind-ui__result-link {
+  animation: none !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-search .pagefind-ui__form,
+  .site-search .pagefind-ui__results,
+  .site-search .pagefind-ui__result,
+  .site-search .pagefind-ui__result-link {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 section h2 {
   font-family: "Recharge", sans-serif;
   font-size: 1.6rem;
