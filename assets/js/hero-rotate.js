@@ -15,25 +15,25 @@
   const heroSlides = [
     {
       key: "brainstream",
-      imageSrc: "assets/logos/xbsmgmainx1.svg",
+      imageSrc: "assets/illustrations/bsmgmetal.webp",
       tagline: "Creator-first media systems, engineered for longevity.",
       accent: null
     },
     {
       key: "streamsuites",
-      imageSrc: "assets/logos/logocircle.png",
+      imageSrc: "assets/illustrations/ssblueshield.webp",
       tagline: "Powering StreamSuites™, the next-generation creator platform.",
       accent: null
     },
     {
       key: "danielclancy",
-      imageSrc: "assets/logos/DCX.svg",
+      imageSrc: "assets/illustrations/dcx.webp",
       tagline: "Professional architectural and structural drafting services.",
       accent: null
     },
     {
       key: "danielclancy-live",
-      imageSrc: "assets/logos/dcliveblack.svg",
+      imageSrc: "assets/illustrations/dcsilver.webp",
       tagline: "Personal podcast hub featuring long-form discussions and media.",
       accent: null
     }
