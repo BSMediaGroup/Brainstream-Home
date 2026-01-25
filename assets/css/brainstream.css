@@ -693,6 +693,10 @@ section h2 {
   gap: 14px;
 }
 
+.list-item-details {
+  border: 0;
+}
+
 .list-item {
   display: flex;
   justify-content: space-between;
@@ -701,6 +705,58 @@ section h2 {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 14px;
+  font-size: 0.9rem;
+}
+
+.list-item-details summary.list-item {
+  cursor: pointer;
+  list-style: none;
+}
+
+.list-item-details summary.list-item::-webkit-details-marker {
+  display: none;
+}
+
+.list-item-details summary.list-item::marker {
+  content: "";
+}
+
+.list-item-details summary.list-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.list-expand {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.list-item-details[open] .list-item {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.list-item-details[open] .list-expand {
+  max-height: 1000px;
+  opacity: 1;
+  margin-top: 10px;
+  padding: 14px 18px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0 0 14px 14px;
+}
+
+.list-expand img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.list-expand p {
+  margin-top: 12px;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
@@ -722,6 +778,12 @@ section h2 {
   background: var(--accent-soft);
   padding: 6px 10px;
   border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .list-expand {
+    transition: none;
+  }
 }
 
 .about {
