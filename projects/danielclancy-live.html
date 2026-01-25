@@ -34,9 +34,9 @@
         </div>
       </a>
       <nav aria-label="Primary">
-        <a href="#projects">Projects</a>
-        <a href="#network">Network</a>
-        <a href="#about">About</a>
+        <a href="/projects/">Projects</a>
+        <a href="/network/">Network</a>
+        <a href="/about/">About</a>
         <button class="toggle" type="button" id="theme-toggle" aria-pressed="false" aria-label="Toggle theme">
           <img class="toggle-icon toggle-icon-dark" src="../assets/icons/darkmode.svg" alt="" />
           <img class="toggle-icon toggle-icon-light" src="../assets/icons/lightmode.svg" alt="" />
@@ -50,7 +50,11 @@
     <div class="page">
       <section>
         <h1>DanielClancy.live</h1>
-        <p>Placeholder overview for the DanielClancy.live project.</p>
+        <p>
+          Brainstream Media Group&trade; project page.
+          This page serves as a placeholder overview and will be expanded
+          with detailed content, media, and links in a later phase.
+        </p>
       </section>
     </div>
   </main>
@@ -80,29 +84,5 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    const root = document.documentElement;
-    const toggleButton = document.getElementById("theme-toggle");
-    const storedTheme = localStorage.getItem("theme");
-
-    const setTheme = (theme) => {
-      if (theme === "light") {
-        root.setAttribute("data-theme", "light");
-        toggleButton.setAttribute("aria-pressed", "true");
-      } else {
-        root.removeAttribute("data-theme");
-        toggleButton.setAttribute("aria-pressed", "false");
-      }
-    };
-
-    setTheme(storedTheme || "dark");
-
-    toggleButton.addEventListener("click", () => {
-      const nextTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
-      localStorage.setItem("theme", nextTheme);
-      setTheme(nextTheme);
-    });
-  </script>
 </body>
 </html>
