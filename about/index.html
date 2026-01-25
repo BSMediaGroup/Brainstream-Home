@@ -1,13 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | Brainstream Media Group</title>
-  <meta name="description" content="About page for Brainstream Media Group." />
-  <meta property="og:title" content="Brainstream Media Group™" />
-  <meta property="og:description"
-        content="Brainstream Media Group™ is the creative studio and parent company behind StreamSuites™, podcast networks, and professional services. Strategy × Design × Engineering. Creator-first systems, built to last." />
+  <title>About | Brainstream Media Group™</title>
+  <meta name="description" content="Learn about Brainstream Media Group™, a creator-first media studio founded by Daniel Clancy." />
+  <meta property="og:title" content="About | Brainstream Media Group™" />
+  <meta property="og:description" content="Brainstream Media Group™ is a creator-first media studio founded by Daniel Clancy, spanning strategy, design, and engineering." />
   <meta property="og:image" content="https://brainstream.media/assets/backgrounds/bsmg-seoshare.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -15,31 +14,32 @@
   <meta property="og:image:width" content="600" />
   <meta property="og:image:height" content="600" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://brainstream.media/" />
+  <meta property="og:url" content="https://brainstream.media/about/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Brainstream Media Group™" />
-  <meta name="twitter:description"
-        content="Building enduring brands, not trends. Product platforms, podcasts, and professional services under Brainstream Media Group™." />
+  <meta name="twitter:title" content="About | Brainstream Media Group™" />
+  <meta name="twitter:description" content="Creator-first media studio operating at the intersection of strategy, design, and engineering." />
   <meta name="twitter:image" content="https://brainstream.media/assets/backgrounds/bsmg-seoshare.jpg" />
-  <link rel="stylesheet" href="../assets/css/brainstream.css" />
+  <link rel="icon" href="/assets/icons/xbsmgmainx1.ico" />
+  <link rel="stylesheet" href="/assets/css/brainstream.css" />
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="page header-inner">
       <a class="brand brand-link" href="https://brainstream.media">
-        <img src="../assets/logos/xbsmgmainx1.svg" alt="Brainstream Media logo" />
+        <img src="/assets/logos/xbsmgmainx1.svg" alt="Brainstream Media logo" />
         <div class="brand-title">
           <span class="brand-main">Brainstream</span>
           <span class="brand-sub"><span class="brand-sub-text">Media Group</span></span>
         </div>
       </a>
       <nav aria-label="Primary">
-        <a href="#projects">Projects</a>
-        <a href="#network">Network</a>
-        <a href="#about">About</a>
+        <a href="/projects/">Projects</a>
+        <a href="/network/">Network</a>
+        <a href="/about/">About</a>
         <button class="toggle" type="button" id="theme-toggle" aria-pressed="false" aria-label="Toggle theme">
-          <img class="toggle-icon toggle-icon-dark" src="../assets/icons/darkmode.svg" alt="" />
-          <img class="toggle-icon toggle-icon-light" src="../assets/icons/lightmode.svg" alt="" />
+          <img class="toggle-icon toggle-icon-dark" src="/assets/icons/darkmode.svg" alt="" />
+          <img class="toggle-icon toggle-icon-light" src="/assets/icons/lightmode.svg" alt="" />
           <span class="sr-only">Toggle theme</span>
         </button>
       </nav>
@@ -50,7 +50,16 @@
     <div class="page">
       <section>
         <h1>About</h1>
-        <p>Placeholder overview of the organization and leadership.</p>
+        <p>
+          Brainstream Media Group™ is a creator-first media studio founded by
+          Daniel Clancy. The group operates at the intersection of strategy,
+          design, and engineering, overseeing product platforms, podcast
+          networks, and professional digital services.
+        </p>
+        <p>
+          This page serves as a placeholder and will be expanded with detailed
+          background, principles, and project history in a later phase.
+        </p>
       </section>
     </div>
   </main>
@@ -58,51 +67,27 @@
   <footer class="site-footer">
     <div class="page footer-inner">
       <div class="footer-brand">
-        <div>Brainstream Media Group Â© 2026</div>
+        <div>Brainstream Media Group © 2026</div>
         <div class="footer-links">
-          <a href="#projects">Projects</a>
-          <a href="#network">Network</a>
-          <a href="#about">About</a>
-          <a href="https://brainstream.media" target="_blank" rel="noreferrer">brainstream.media</a>
+          <a href="/projects/">Projects</a>
+          <a href="/network/">Network</a>
+          <a href="/about/">About</a>
+          <a href="/">brainstream.media</a>
         </div>
       </div>
       <div class="social-links">
         <a class="social-link" href="https://x.com/thebsmediagroup" target="_blank" rel="noreferrer">
-          <img class="social-icon icon-dark" src="../assets/icons/twitter-white.svg" alt="" />
-          <img class="social-icon icon-light" src="../assets/icons/twitter-0.svg" alt="" />
+          <img class="social-icon icon-dark" src="/assets/icons/twitter-white.svg" alt="" />
+          <img class="social-icon icon-light" src="/assets/icons/twitter-0.svg" alt="" />
           <span>@thebsmediagroup</span>
         </a>
         <a class="social-link" href="https://www.linkedin.com/company/bsmediagroup" target="_blank" rel="noreferrer">
-          <img class="social-icon linkedin-icon icon-dark" src="../assets/icons/linkedin-0.svg" alt="" />
-          <img class="social-icon linkedin-icon icon-light" src="../assets/icons/linkedin.svg" alt="" />
+          <img class="social-icon linkedin-icon icon-dark" src="/assets/icons/linkedin-0.svg" alt="" />
+          <img class="social-icon linkedin-icon icon-light" src="/assets/icons/linkedin.svg" alt="" />
           <span>LinkedIn</span>
         </a>
       </div>
     </div>
   </footer>
-
-  <script>
-    const root = document.documentElement;
-    const toggleButton = document.getElementById("theme-toggle");
-    const storedTheme = localStorage.getItem("theme");
-
-    const setTheme = (theme) => {
-      if (theme === "light") {
-        root.setAttribute("data-theme", "light");
-        toggleButton.setAttribute("aria-pressed", "true");
-      } else {
-        root.removeAttribute("data-theme");
-        toggleButton.setAttribute("aria-pressed", "false");
-      }
-    };
-
-    setTheme(storedTheme || "dark");
-
-    toggleButton.addEventListener("click", () => {
-      const nextTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
-      localStorage.setItem("theme", nextTheme);
-      setTheme(nextTheme);
-    });
-  </script>
 </body>
 </html>
