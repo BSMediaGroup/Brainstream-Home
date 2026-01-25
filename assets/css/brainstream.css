@@ -465,6 +465,7 @@ section {
 .site-search .pagefind-ui__search-input {
   background: var(--search-input-bg);
   background-color: var(--search-input-bg);
+  background-color: rgba(0, 0, 0, 0.2) !important;
   border-radius: 10px;
   border: 2px solid var(--search-input-border);
   box-shadow: 20px 20px 60px var(--search-input-shadow-strong),
@@ -472,6 +473,10 @@ section {
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
   transition: none;
+}
+
+[data-theme="light"] .site-search .pagefind-ui__search-input {
+  background-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 .site-search .pagefind-ui__search-input:focus,
@@ -484,6 +489,15 @@ section {
   border-radius: 999px;
   border: 1px solid var(--border);
   background: var(--surface);
+  color: var(--text);
+  font-size: 0;
+  line-height: 0;
+}
+
+.site-search .pagefind-ui__search-clear::before {
+  content: "×";
+  font-size: 14px;
+  line-height: 1;
   color: var(--text);
 }
 
