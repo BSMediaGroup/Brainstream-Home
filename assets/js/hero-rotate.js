@@ -24,11 +24,6 @@
       tagline: "Powering StreamSuites™, the next-generation creator platform."
     },
     {
-      key: "thirdrailify",
-      imageSrc: "assets/logos/thirdrailify.svg",
-      tagline: "Producing long-form podcast networks and media brands."
-    },
-    {
       key: "danielclancy",
       imageSrc: "assets/logos/DCX.svg",
       tagline: "Professional architectural and structural drafting services."
@@ -37,11 +32,6 @@
       key: "danielclancy-live",
       imageSrc: "assets/logos/dcliveblack.svg",
       tagline: "Personal podcast hub featuring long-form discussions and media."
-    },
-    {
-      key: "simpledavy",
-      imageSrc: "assets/logos/simpledavy.svg",
-      tagline: "An independent podcast platform currently in development."
     }
   ];
 
@@ -73,20 +63,50 @@
     return newSlide;
   };
 
-  if (initialSlides.length < heroSlides.length) {
-    for (let i = initialSlides.length; i < heroSlides.length; i += 1) {
-      const slideData = heroSlides[i];
+  const matchesImageSrc = (slide, imageSrc) => {
+    const rawSrc = slide.getAttribute("src") || "";
+    const resolvedSrc = slide.src || "";
+    return rawSrc.endsWith(imageSrc) || resolvedSrc.endsWith(imageSrc);
+  };
+
+  const getAllSlides = () => Array.from(hero.querySelectorAll(".hero-image-slide"));
+
+  heroSlides.forEach((slideData) => {
+    const existingSlides = getAllSlides();
+    const match = existingSlides.find((slide) => matchesImageSrc(slide, slideData.imageSrc));
+    if (!match) {
       const newSlide = createSlide();
       newSlide.src = slideData.imageSrc;
       newSlide.alt = slideData.key;
       slidesContainer.appendChild(newSlide);
     }
+  });
+
+  const allSlides = getAllSlides();
+  const rotationSlides = [];
+  let rotationReady = true;
+
+  for (const slideData of heroSlides) {
+    const match = allSlides.find((slide) => matchesImageSrc(slide, slideData.imageSrc));
+    if (!match) {
+      rotationReady = false;
+      break;
+    }
+    rotationSlides.push(match);
   }
 
-  const slides = Array.from(hero.querySelectorAll(".hero-image-slide")).slice(0, heroSlides.length);
+  if (!rotationReady || rotationSlides.length !== heroSlides.length) {
+    return;
+  }
+
+  allSlides.forEach((slide) => {
+    if (!rotationSlides.includes(slide)) {
+      slide.classList.remove("is-active");
+    }
+  });
 
   const setActive = (index) => {
-    slides.forEach((slide, i) => {
+    rotationSlides.forEach((slide, i) => {
       slide.classList.toggle("is-active", i === index);
     });
   };
@@ -116,8 +136,8 @@
       return;
     }
 
-    const currentSlide = slides[currentIndex];
-    const nextSlide = slides[nextIndex];
+    const currentSlide = rotationSlides[currentIndex];
+    const nextSlide = rotationSlides[nextIndex];
 
     nextSlide.classList.add("is-active");
     window.requestAnimationFrame(() => {
