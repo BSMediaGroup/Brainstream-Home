@@ -518,8 +518,8 @@ section {
 
 .site-search .pagefind-ui__search-clear::before {
   content: "";
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   display: block;
   background-color: var(--muted);
   mask-image: url("../icons/ui/clear.svg");
