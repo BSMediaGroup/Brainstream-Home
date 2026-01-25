@@ -917,3 +917,22 @@ section h2 {
 .pagefind-ui .pagefind-ui__form > button.pagefind-ui__search-clear:focus-visible {
   opacity: 1 !important;
 }
+
+/* --- Stable wrapper for Pagefind input + clear --- */
+.search-input-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.search-input-wrap .pagefind-ui__search-input {
+  width: 100%;
+  padding-right: 48px;
+}
+
+.search-input-wrap .pagefind-ui__search-clear {
+  position: absolute !important;
+  top: 50% !important;
+  right: 14px !important;
+  transform: translateY(-50%) !important;
+}

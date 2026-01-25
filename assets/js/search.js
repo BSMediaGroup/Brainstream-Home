@@ -38,6 +38,28 @@
             placeholder: "Search Brainstream Media",
           },
         });
+
+        const wrapSearchControls = () => {
+          const form = document.querySelector(".pagefind-ui__form");
+          const input = form?.querySelector(".pagefind-ui__search-input");
+          const clear = form?.querySelector(".pagefind-ui__search-clear");
+
+          if (!form || !input || !clear) return;
+
+          if (input.parentElement?.classList.contains("search-input-wrap")) return;
+
+          const wrap = document.createElement("div");
+          wrap.className = "search-input-wrap";
+
+          input.before(wrap);
+          wrap.appendChild(input);
+          wrap.appendChild(clear);
+        };
+
+        const observer = new MutationObserver(wrapSearchControls);
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        wrapSearchControls();
       } catch (error) {
         return;
       }
