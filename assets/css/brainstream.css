@@ -297,11 +297,64 @@ main {
     animation: none;
     background-position: 0% 50%, 0% 50%;
   }
+
+  .hero-image-slide,
+  .hero-tagline {
+    transition: none;
+  }
+
+  .hero-image-slide {
+    opacity: 0;
+  }
+
+  .hero-image-slide[data-index="0"] {
+    opacity: 1;
+  }
+
+  .hero-tagline {
+    opacity: 1;
+  }
 }
 
 .hero p {
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.hero-tagline {
+  margin-top: 12px;
+  font-family: inherit;
+  color: var(--muted);
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  min-height: 1.2em;
+}
+
+.hero-tagline.is-visible {
+  opacity: 1;
+}
+
+.hero-image-rotator {
+  position: relative;
+  justify-self: end;
+  align-self: stretch;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero-image-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  pointer-events: none;
+}
+
+.hero-image-slide.is-active {
+  opacity: 1;
 }
 
 .hero-image {

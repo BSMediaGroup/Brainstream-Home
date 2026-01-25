@@ -51,8 +51,13 @@
 		    portfolio of creator-forward experiences, unifying strategy, design, and engineering into
 		    systems built for longevity rather than short-term trends.
 		  </p>
+          <p class="hero-tagline" aria-live="polite"></p>
         </div>
-        <img class="hero-image" src="assets/logos/xbsmgmainx1.svg" alt="Brainstream Media Group logo" />
+        <div class="hero-image-rotator">
+          <img class="hero-image hero-image-slide is-active" src="assets/logos/xbsmgmainx1.svg" alt="Brainstream Media Group logo" data-index="0" />
+          <img class="hero-image hero-image-slide" src="assets/logos/xbsmgmainy1.svg" alt="Brainstream Media Group logo" data-index="1" />
+          <img class="hero-image hero-image-slide" src="assets/logos/xbsmgshield.svg" alt="Brainstream Media Group logo" data-index="2" />
+        </div>
       </section>
 
       <section id="projects">
@@ -148,6 +153,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/hero-rotate.js" defer></script>
   <script>
     const root = document.documentElement;
     const toggleButton = document.getElementById("theme-toggle");
