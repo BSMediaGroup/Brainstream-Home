@@ -16,22 +16,26 @@
     {
       key: "brainstream",
       imageSrc: "assets/logos/xbsmgmainx1.svg",
-      tagline: "Creator-first media systems, engineered for longevity."
+      tagline: "Creator-first media systems, engineered for longevity.",
+      accent: null
     },
     {
       key: "streamsuites",
       imageSrc: "assets/logos/logocircle.png",
-      tagline: "Powering StreamSuites™, the next-generation creator platform."
+      tagline: "Powering StreamSuites™, the next-generation creator platform.",
+      accent: null
     },
     {
       key: "danielclancy",
       imageSrc: "assets/logos/DCX.svg",
-      tagline: "Professional architectural and structural drafting services."
+      tagline: "Professional architectural and structural drafting services.",
+      accent: null
     },
     {
       key: "danielclancy-live",
       imageSrc: "assets/logos/dcliveblack.svg",
-      tagline: "Personal podcast hub featuring long-form discussions and media."
+      tagline: "Personal podcast hub featuring long-form discussions and media.",
+      accent: null
     }
   ];
 
@@ -42,6 +46,7 @@
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const fadeMs = 1200;
   const intervalMs = 7000;
+  const enableAccentText = false;
 
   const templateSlide = initialSlides[0];
   const createSlide = () => {
@@ -112,7 +117,16 @@
   };
 
   const setTagline = (index) => {
-    const nextLine = heroSlides[index % heroSlides.length].tagline;
+    const nextSlide = heroSlides[index % heroSlides.length];
+    let nextLine = nextSlide.tagline;
+
+    if (enableAccentText) {
+      const accent = typeof nextSlide.accent === "string" ? nextSlide.accent.trim() : "";
+      if (accent) {
+        nextLine = `${nextLine} — ${accent}`;
+      }
+    }
+
     taglineEl.textContent = nextLine;
   };
 
