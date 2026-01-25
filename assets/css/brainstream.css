@@ -509,13 +509,14 @@ section {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  align-self: center;
   cursor: pointer;
 }
 
 .site-search .pagefind-ui__search-clear::before {
   content: "";
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   display: block;
   background-color: var(--muted);
   mask-image: url("../icons/ui/clear.svg");
