@@ -56,6 +56,27 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   font-size: 0.9rem;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px),
+    radial-gradient(680px 680px at 100% 0%, var(--accent-soft), transparent 62%);
+  background-size: 40px 40px, 40px 40px, auto;
+  background-position: top left, top left, top right;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 a {
@@ -258,7 +279,7 @@ main {
   font-family: "Recharge", sans-serif;
   font-size: clamp(1.3rem, 2.4vw, 2.4rem);
   line-height: 1.1;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .brand-gradient {
@@ -643,7 +664,7 @@ section {
 section h2 {
   font-family: "Recharge", sans-serif;
   font-size: 1.6rem;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .section-lead {
@@ -891,6 +912,10 @@ section h2 {
 }
 
 @media (max-width: 720px) {
+  body::before {
+    opacity: 0.024;
+  }
+
   .hero {
     grid-template-columns: 1fr;
   }
