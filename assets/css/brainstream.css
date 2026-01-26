@@ -56,53 +56,111 @@ html {
 body {
   font-family: "SuiGeneris", system-ui, -apple-system, sans-serif;
   background:
-    /* Primary ambient glow — MUST be top layer */
+    /* Hex-inspired soft geometry (not literal) */
+    conic-gradient(
+      from 210deg at 22% 18%,
+      rgba(140,121,255,0.00) 0deg,
+      rgba(140,121,255,0.12) 35deg,
+      rgba(140,121,255,0.00) 75deg,
+      rgba(140,121,255,0.10) 115deg,
+      rgba(140,121,255,0.00) 160deg,
+      rgba(140,121,255,0.08) 205deg,
+      rgba(140,121,255,0.00) 260deg,
+      rgba(140,121,255,0.10) 310deg,
+      rgba(140,121,255,0.00) 360deg
+    ),
+
+    /* Soft glow field (large, readable) */
     radial-gradient(
       1200px 900px at 18% 12%,
-      rgba(140,121,255,0.14),
-      rgba(140,121,255,0.06) 40%,
-      transparent 65%
+      rgba(140,121,255,0.18),
+      rgba(140,121,255,0.06) 42%,
+      transparent 70%
     ),
 
-    /* Structural grid */
-    linear-gradient(
-      rgba(255,255,255,0.02) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,0.02) 1px,
-      transparent 1px
-    ),
+    /* Structural grid (existing look) */
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
 
-    /* Existing brand gradients (unchanged) */
-    radial-gradient(
-      circle at top,
-      rgba(98, 90, 200, 0.22),
-      transparent 50%
-    ),
-    linear-gradient(
-      180deg,
-      var(--bg) 0%,
-      var(--bg-alt) 100%
-    );
+    /* Existing brand gradients (unchanged intent) */
+    radial-gradient(circle at top, rgba(98, 90, 200, 0.22), transparent 50%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
   background-size:
+    auto,
     auto,
     56px 56px,
     56px 56px,
     auto,
     auto;
   background-position:
+    22% 18%,
     center,
     top left,
     top left,
     center,
     center;
+  background-blend-mode:
+    screen,
+    screen,
+    normal,
+    normal,
+    normal,
+    normal;
   color: var(--text);
   min-height: 100vh;
   line-height: 1.6;
   font-size: 0.9rem;
   position: relative;
+}
+
+[data-theme="light"] body {
+  background:
+    conic-gradient(
+      from 210deg at 22% 18%,
+      rgba(76,62,255,0.00) 0deg,
+      rgba(76,62,255,0.10) 35deg,
+      rgba(76,62,255,0.00) 75deg,
+      rgba(76,62,255,0.08) 115deg,
+      rgba(76,62,255,0.00) 160deg,
+      rgba(76,62,255,0.06) 205deg,
+      rgba(76,62,255,0.00) 260deg,
+      rgba(76,62,255,0.08) 310deg,
+      rgba(76,62,255,0.00) 360deg
+    ),
+    radial-gradient(
+      1200px 900px at 18% 12%,
+      rgba(76,62,255,0.14),
+      rgba(76,62,255,0.05) 42%,
+      transparent 70%
+    ),
+    linear-gradient(rgba(0,0,0,0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.028) 1px, transparent 1px),
+    radial-gradient(circle at top, rgba(98, 90, 200, 0.12), transparent 55%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+
+  background-size:
+    auto,
+    auto,
+    56px 56px,
+    56px 56px,
+    auto,
+    auto;
+
+  background-position:
+    22% 18%,
+    center,
+    top left,
+    top left,
+    center,
+    center;
+
+  background-blend-mode:
+    multiply,
+    screen,
+    normal,
+    normal,
+    normal,
+    normal;
 }
 
 body::before {
