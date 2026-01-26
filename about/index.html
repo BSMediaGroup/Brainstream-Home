@@ -1,10 +1,10 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | Brainstream Media Groupâ„¢</title>
-  <meta name="description" content="Learn about Brainstream Media Groupâ„¢, a creator-first media studio founded by Daniel Clancy." />
+  <title>About | Brainstream Media Group™</title>
+  <meta name="description" content="Learn about Brainstream Media Group™, a creator-first media studio founded by Daniel Clancy." />
 
   <link rel="icon" href="/assets/icons/xbsmgmainx1.ico" />
   <link rel="stylesheet" href="/assets/css/brainstream.css" />
@@ -53,7 +53,7 @@
         <h1>About</h1>
         <h2>Overview</h2>
         <p>
-          Brainstream Media Groupâ„¢ is a creator-first media studio and parent entity
+          Brainstream Media Group™ is a creator-first media studio and parent entity
           overseeing multiple platforms and properties. The organization integrates
           brand governance, product development, and media operations under a single
           operational framework.
@@ -82,7 +82,7 @@
   <footer class="site-footer">
     <div class="page footer-inner">
       <div class="footer-brand">
-        <div>Brainstream Media Group Â© 2026</div>
+        <div>Brainstream Media Group © 2026</div>
         <div class="footer-links">
           <a href="/projects/">Projects</a>
           <a href="/network/">Network</a>
@@ -104,5 +104,30 @@
       </div>
     </div>
   </footer>
+  <script>
+    const root = document.documentElement;
+    const toggleButton = document.getElementById("theme-toggle");
+    const storedTheme = localStorage.getItem("theme");
+
+    const setTheme = (theme) => {
+      if (theme === "light") {
+        root.setAttribute("data-theme", "light");
+        toggleButton.setAttribute("aria-pressed", "true");
+      } else {
+        root.removeAttribute("data-theme");
+        toggleButton.setAttribute("aria-pressed", "false");
+      }
+    };
+
+    setTheme(storedTheme || "dark");
+
+    toggleButton.addEventListener("click", () => {
+      const nextTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      localStorage.setItem("theme", nextTheme);
+      setTheme(nextTheme);
+    });
+  </script>
 </body>
 </html>
+
+

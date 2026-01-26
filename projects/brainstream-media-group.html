@@ -96,5 +96,30 @@
       </div>
     </div>
   </footer>
+  <script>
+    const root = document.documentElement;
+    const toggleButton = document.getElementById("theme-toggle");
+    const storedTheme = localStorage.getItem("theme");
+
+    const setTheme = (theme) => {
+      if (theme === "light") {
+        root.setAttribute("data-theme", "light");
+        toggleButton.setAttribute("aria-pressed", "true");
+      } else {
+        root.removeAttribute("data-theme");
+        toggleButton.setAttribute("aria-pressed", "false");
+      }
+    };
+
+    setTheme(storedTheme || "dark");
+
+    toggleButton.addEventListener("click", () => {
+      const nextTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      localStorage.setItem("theme", nextTheme);
+      setTheme(nextTheme);
+    });
+  </script>
 </body>
 </html>
+
+

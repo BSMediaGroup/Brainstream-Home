@@ -1,10 +1,10 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services | Brainstream Media Groupâ„¢</title>
-  <meta name="description" content="Brainstream Media Groupâ„¢ provides strategy-led services spanning product architecture, media systems, and professional digital infrastructure." />
+  <title>Services | Brainstream Media Group™</title>
+  <meta name="description" content="Brainstream Media Group™ provides strategy-led services spanning product architecture, media systems, and professional digital infrastructure." />
 
   <link rel="icon" href="../assets/icons/xbsmgmainx1.ico" />
   <link rel="stylesheet" href="../assets/css/brainstream.css" />
@@ -52,7 +52,7 @@
       <section>
         <h1>Services</h1>
         <p>
-          Brainstream Media Groupâ„¢ provides strategy-led services spanning
+          Brainstream Media Group™ provides strategy-led services spanning
           product architecture, media systems, and professional digital
           infrastructure. This page serves as a placeholder and will be
           expanded with detailed service offerings in a later phase.
@@ -64,7 +64,7 @@
   <footer class="site-footer">
     <div class="page footer-inner">
       <div class="footer-brand">
-        <div>Brainstream Media Group Â© 2026</div>
+        <div>Brainstream Media Group © 2026</div>
         <div class="footer-links">
           <a href="/projects/">Projects</a>
           <a href="/network/">Network</a>
@@ -86,5 +86,30 @@
       </div>
     </div>
   </footer>
+  <script>
+    const root = document.documentElement;
+    const toggleButton = document.getElementById("theme-toggle");
+    const storedTheme = localStorage.getItem("theme");
+
+    const setTheme = (theme) => {
+      if (theme === "light") {
+        root.setAttribute("data-theme", "light");
+        toggleButton.setAttribute("aria-pressed", "true");
+      } else {
+        root.removeAttribute("data-theme");
+        toggleButton.setAttribute("aria-pressed", "false");
+      }
+    };
+
+    setTheme(storedTheme || "dark");
+
+    toggleButton.addEventListener("click", () => {
+      const nextTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      localStorage.setItem("theme", nextTheme);
+      setTheme(nextTheme);
+    });
+  </script>
 </body>
 </html>
+
+
