@@ -68,6 +68,15 @@ img {
   display: block;
 }
 
+.project-banner {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin: 18px 0 28px;
+}
+
 .page {
   max-width: 1440px;
   margin: 0 auto;
@@ -884,6 +893,10 @@ section h2 {
 @media (max-width: 720px) {
   .hero {
     grid-template-columns: 1fr;
+  }
+
+  .project-banner {
+    max-height: 220px;
   }
 
   .header-inner {
