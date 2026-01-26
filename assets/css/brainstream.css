@@ -48,6 +48,11 @@
   padding: 0;
 }
 
+html {
+  position: relative;
+  background-color: var(--bg-base, #0b0e12);
+}
+
 body {
   font-family: "SuiGeneris", system-ui, -apple-system, sans-serif;
   background: radial-gradient(circle at top, rgba(98, 90, 200, 0.22), transparent 50%),
@@ -1008,6 +1013,80 @@ section h2 {
 
   .social-links {
     justify-content: flex-start;
+  }
+}
+
+/* -------------------------------------------------
+   Global Ambient Background Geometry
+   Root-anchored (html) — safe paint surface
+-------------------------------------------------- */
+
+html::before,
+html::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Subtle structural texture */
+html::before {
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.025) 1px,
+      transparent 1px
+    );
+  background-size: 48px 48px;
+  opacity: 0.25;
+}
+
+/* Soft abstract glow */
+html::after {
+  background:
+    radial-gradient(
+      60% 40% at 20% 15%,
+      rgba(120,140,255,0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      50% 35% at 80% 80%,
+      rgba(180,120,255,0.06),
+      transparent 65%
+    );
+}
+
+/* Light theme adjustment */
+@media (prefers-color-scheme: light) {
+  html::before {
+    opacity: 0.15;
+  }
+
+  html::after {
+    background:
+      radial-gradient(
+        60% 40% at 20% 15%,
+        rgba(80,100,200,0.06),
+        transparent 60%
+      ),
+      radial-gradient(
+        50% 35% at 80% 80%,
+        rgba(120,80,180,0.05),
+        transparent 65%
+      );
+  }
+}
+
+/* Reduced motion safety (static by default, future-proof) */
+@media (prefers-reduced-motion: reduce) {
+  html::before,
+  html::after {
+    animation: none;
   }
 }
 
