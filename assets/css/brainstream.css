@@ -503,8 +503,8 @@ main {
 :root:not(.is-loaded) .list-item,
 :root:not(.is-loaded) .about,
 :root:not(.is-loaded) footer {
-  opacity: 0;
-  transform: translateY(6px);
+  opacity: 1;
+  transform: none;
 }
 
 :root.is-loaded .hero-content,
