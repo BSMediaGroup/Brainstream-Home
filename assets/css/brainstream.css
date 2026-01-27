@@ -1093,13 +1093,17 @@ section h2 {
   margin-top: auto;
 }
 
-.site-footer {
-  margin-top: auto;
-}
+  .site-footer {
+    margin-top: auto;
+  }
 
-.contact-surface {
-  margin: 18px 0 32px;
-}
+  .contact-page {
+    margin-top: -30px;
+  }
+
+  .contact-surface {
+    margin: 18px 0 32px;
+  }
 
 .contact-grid {
   display: grid;
@@ -1164,9 +1168,9 @@ section h2 {
   outline-offset: 2px;
 }
 
-.contact-submit {
-  justify-self: start;
-  padding: 12px 22px;
+  .contact-submit {
+    justify-self: start;
+    padding: 12px 22px;
   border-radius: 999px;
   border: 1px solid transparent;
   background: var(--accent);
@@ -1174,9 +1178,32 @@ section h2 {
   font-family: "Recharge", sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-}
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .contact-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .form-status {
+    min-height: 20px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .form-status[data-state="success"] {
+    color: var(--accent);
+  }
+
+  .form-status[data-state="error"] {
+    color: #f2a3a3;
+  }
+
+  [data-theme="light"] .form-status[data-state="error"] {
+    color: #b14a4a;
+  }
 
 .contact-email {
   margin-top: 12px;

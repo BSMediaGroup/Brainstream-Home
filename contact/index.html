@@ -53,7 +53,7 @@
 
   <main>
     <div class="page">
-      <section>
+      <section class="contact-page">
         <h1>Contact</h1>
         <p class="section-lead">
           Share a brief overview of your request and the Brainstream Media Group team will route it to the
@@ -67,17 +67,18 @@
               <form class="contact-form" action="#" method="post">
                 <div class="contact-field">
                   <label for="contact-name">Name</label>
-                  <input id="contact-name" name="name" type="text" autocomplete="name" />
+                  <input id="contact-name" name="name" type="text" autocomplete="name" required />
                 </div>
                 <div class="contact-field">
                   <label for="contact-email">Email</label>
-                  <input id="contact-email" name="email" type="email" autocomplete="email" />
+                  <input id="contact-email" name="email" type="email" autocomplete="email" required />
                 </div>
                 <div class="contact-field">
                   <label for="contact-message">Message</label>
-                  <textarea id="contact-message" name="message" rows="6"></textarea>
+                  <textarea id="contact-message" name="message" rows="6" required></textarea>
                 </div>
                 <button class="contact-submit" type="submit">Submit</button>
+                <p class="form-status" role="status" aria-live="polite"></p>
               </form>
             </div>
             <div class="contact-panel">
@@ -161,6 +162,68 @@
       localStorage.setItem("theme", nextTheme);
       setTheme(nextTheme);
     });
+
+    const contactForm = document.querySelector(".contact-form");
+
+    if (contactForm) {
+      const statusEl = contactForm.querySelector(".form-status");
+      const submitButton = contactForm.querySelector(".contact-submit");
+      const nameField = contactForm.querySelector("#contact-name");
+      const emailField = contactForm.querySelector("#contact-email");
+      const messageField = contactForm.querySelector("#contact-message");
+      const endpoint = "https://brainstream-contact-worker.daniel-98c.workers.dev";
+
+      const setStatus = (message, state) => {
+        if (!statusEl) {
+          return;
+        }
+        statusEl.textContent = message;
+        statusEl.dataset.state = state || "";
+      };
+
+      contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (!nameField || !emailField || !messageField) {
+          setStatus("Unable to submit this form right now.", "error");
+          return;
+        }
+
+        setStatus("Sending message...", "pending");
+        if (submitButton) {
+          submitButton.disabled = true;
+        }
+
+        const payload = {
+          name: nameField.value.trim(),
+          email: emailField.value.trim(),
+          message: messageField.value.trim()
+        };
+
+        try {
+          const response = await fetch(endpoint, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+          });
+
+          if (!response.ok) {
+            throw new Error("Request failed");
+          }
+
+          contactForm.reset();
+          setStatus("Thanks — your message has been sent.", "success");
+        } catch (error) {
+          setStatus("Sorry, something went wrong. Please try again shortly.", "error");
+        } finally {
+          if (submitButton) {
+            submitButton.disabled = false;
+          }
+        }
+      });
+    }
   </script>
 </body>
 </html>
