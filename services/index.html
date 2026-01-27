@@ -1,12 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services | Brainstream Media Group™</title>
-  <meta name="description" content="Brainstream Media Group™ provides strategy-led services spanning product architecture, media systems, and professional digital infrastructure." />
-
-  <link rel="icon" href="../assets/icons/xbsmgmainx1.ico" />
+  <title>Services | Brainstream Media Group&trade;</title>
+  <meta name="description" content="Brainstream Media Group provides strategy-led services for product architecture, media systems, and professional digital infrastructure planning." />
+  <link rel="canonical" href="https://brainstream.media/services/" />
+  <meta name="google-site-verification" content="" />
+  <meta name="msvalidate.01" content="" />
+<link rel="icon" href="../assets/icons/xbsmgmainx1.ico" />
   <link rel="stylesheet" href="../assets/css/brainstream.css" />
   <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
 <meta property="og:title" content="Brainstream Media Group?" />
@@ -26,6 +28,7 @@
 </head>
 <body>
   <header class="site-header">
+    <div data-pagefind-ignore>
     <div class="page header-inner">
       <a class="brand brand-link" href="https://brainstream.media">
         <img src="../assets/logos/xbsmgmainx1.svg" alt="Brainstream Media logo" />
@@ -45,6 +48,7 @@
         </button>
       </nav>
     </div>
+    </div>
   </header>
 
   <main>
@@ -52,7 +56,7 @@
       <section>
         <h1>Services</h1>
         <p>
-          Brainstream Media Group™ provides strategy-led services spanning
+          Brainstream Media Group� provides strategy-led services spanning
           product architecture, media systems, and professional digital
           infrastructure. This page serves as a placeholder and will be
           expanded with detailed service offerings in a later phase.
@@ -62,9 +66,10 @@
   </main>
 
   <footer class="site-footer">
+    <div data-pagefind-ignore>
     <div class="page footer-inner">
       <div class="footer-brand">
-        <div>Brainstream Media Group © 2026</div>
+        <div>Brainstream Media Group � 2026</div>
         <div class="footer-links">
           <a href="/projects/">Projects</a>
           <a href="/network/">Network</a>
@@ -85,6 +90,32 @@
         </a>
       </div>
     </div>
+    </div>
   </footer>
+  <script>
+    const root = document.documentElement;
+    const toggleButton = document.getElementById("theme-toggle");
+    const storedTheme = localStorage.getItem("theme");
+
+    const setTheme = (theme) => {
+      if (theme === "light") {
+        root.setAttribute("data-theme", "light");
+        toggleButton.setAttribute("aria-pressed", "true");
+      } else {
+        root.removeAttribute("data-theme");
+        toggleButton.setAttribute("aria-pressed", "false");
+      }
+    };
+
+    setTheme(storedTheme || "dark");
+
+    toggleButton.addEventListener("click", () => {
+      const nextTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      localStorage.setItem("theme", nextTheme);
+      setTheme(nextTheme);
+    });
+  </script>
 </body>
 </html>
+
+

@@ -1,12 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | Brainstream Media Group™</title>
-  <meta name="description" content="Contact Brainstream Media Group™ for general enquiries, partnerships, or professional services." />
-
-  <link rel="icon" href="/assets/icons/xbsmgmainx1.ico" />
+  <title>Contact | Brainstream Media Group&trade;</title>
+  <meta name="description" content="Contact Brainstream Media Group for partnerships, platform enquiries, and professional services related to media, strategy, engineering, or delivery." />
+  <link rel="canonical" href="https://brainstream.media/contact/" />
+  <meta name="google-site-verification" content="" />
+  <meta name="msvalidate.01" content="" />
+<link rel="icon" href="/assets/icons/xbsmgmainx1.ico" />
   <link rel="stylesheet" href="/assets/css/brainstream.css" />
   <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
 <meta property="og:title" content="Brainstream Media Group?" />
@@ -26,6 +28,7 @@
 </head>
 <body>
   <header class="site-header">
+    <div data-pagefind-ignore>
     <div class="page header-inner">
       <a class="brand brand-link" href="https://brainstream.media">
         <img src="/assets/logos/xbsmgmainx1.svg" alt="Brainstream Media logo" />
@@ -45,28 +48,40 @@
         </button>
       </nav>
     </div>
+    </div>
   </header>
 
   <main>
     <div class="page">
       <section>
         <h1>Contact</h1>
+        <h2>General Enquiries</h2>
         <p>
-          For general enquiries, partnerships, or professional services,
-          please use the appropriate contact channels listed below.
+          For general enquiries related to Brainstream Media Group�, partnerships,
+          or platform-level questions, please reach out through the appropriate
+          professional channels.
         </p>
+        <h2>Professional Services</h2>
         <p>
-          Detailed contact forms and submission workflows will be introduced
-          in a later phase.
+          Enquiries related to drafting, technical services, or professional
+          engagements should reference the relevant project or service area to
+          ensure accurate routing and response.
+        </p>
+        <h2>Media & Platforms</h2>
+        <p>
+          Questions or correspondence related to podcasts, publishing platforms,
+          or media properties under the Brainstream Media Group umbrella should
+          clearly indicate the platform or property involved.
         </p>
       </section>
     </div>
   </main>
 
   <footer class="site-footer">
+    <div data-pagefind-ignore>
     <div class="page footer-inner">
       <div class="footer-brand">
-        <div>Brainstream Media Group © 2026</div>
+        <div>Brainstream Media Group � 2026</div>
         <div class="footer-links">
           <a href="/projects/">Projects</a>
           <a href="/network/">Network</a>
@@ -87,6 +102,34 @@
         </a>
       </div>
     </div>
+    </div>
   </footer>
+  <script>
+    const root = document.documentElement;
+    const toggleButton = document.getElementById("theme-toggle");
+    const storedTheme = localStorage.getItem("theme");
+
+    const setTheme = (theme) => {
+      if (theme === "light") {
+        root.setAttribute("data-theme", "light");
+        toggleButton.setAttribute("aria-pressed", "true");
+      } else {
+        root.removeAttribute("data-theme");
+        toggleButton.setAttribute("aria-pressed", "false");
+      }
+    };
+
+    setTheme(storedTheme || "dark");
+
+    toggleButton.addEventListener("click", () => {
+      const nextTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      localStorage.setItem("theme", nextTheme);
+      setTheme(nextTheme);
+    });
+  </script>
 </body>
 </html>
+
+
+
+

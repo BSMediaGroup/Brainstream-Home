@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>StreamSuites | Brainstream Media Group</title>
-  <meta name="description" content="Project page for StreamSuites within Brainstream Media Group." />
-
-  <link rel="stylesheet" href="../assets/css/brainstream.css" />
+  <title>StreamSuites | Brainstream Media Group&trade;</title>
+  <meta name="description" content="StreamSuites is Brainstream Media Group's modular platform for media operations, scheduling, distribution, and performance governance across multi-show brands." />
+  <link rel="canonical" href="https://brainstream.media/projects/streamsuites.html" />
+  <meta name="google-site-verification" content="" />
+  <meta name="msvalidate.01" content="" />
+<link rel="stylesheet" href="../assets/css/brainstream.css" />
 <meta property="og:title" content="Brainstream Media Group?" />
 <meta property="og:description"
       content="Brainstream Media Group? is the creative studio and parent company behind StreamSuites?, podcast networks, and professional services. Strategy ? Design ? Engineering. Creator-first systems, built to last." />
@@ -24,6 +26,7 @@
 </head>
 <body>
   <header class="site-header">
+    <div data-pagefind-ignore>
     <div class="page header-inner">
       <a class="brand brand-link" href="https://brainstream.media">
         <img src="../assets/logos/xbsmgmainx1.svg" alt="Brainstream Media logo" />
@@ -43,13 +46,27 @@
         </button>
       </nav>
     </div>
+    </div>
   </header>
 
   <main>
     <div class="page">
       <section>
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects/">Projects</a></li>
+            <li aria-current="page">StreamSuites</li>
+          </ol>
+        </nav>
+        <a class="context-back" href="/projects/">← Back to Projects</a>
         <h1>StreamSuites</h1>
-        <h2>Platform Overview</h2>
+        <img
+          class="project-banner"
+          src="../assets/backgrounds/SS-YTBANNER-01.png"
+          alt="StreamSuites banner"
+        />
+        <h2>Overview</h2>
         <p>
           StreamSuites is a modular platform for managing media brands, production workflows, and distribution
           operations. It unifies planning, publishing, and performance tracking in a single operational layer.
@@ -66,18 +83,23 @@
           The platform is designed for production teams, network operators, and enterprise media groups that require
           consistent standards across multiple brands and programs.
         </p>
+        <h2>Future Expansion</h2>
+        <p>
+          Additional modules, integrations, and governance tooling will be documented as the platform roadmap evolves.
+        </p>
       </section>
     </div>
   </main>
 
   <footer class="site-footer">
+    <div data-pagefind-ignore>
     <div class="page footer-inner">
       <div class="footer-brand">
         <div>Brainstream Media Group Â© 2026</div>
         <div class="footer-links">
-          <a href="#projects">Projects</a>
-          <a href="#network">Network</a>
-          <a href="#about">About</a>
+          <a href="/projects/">Projects</a>
+          <a href="/network/">Network</a>
+          <a href="/about/">About</a>
           <a href="https://brainstream.media" target="_blank" rel="noreferrer">brainstream.media</a>
         </div>
       </div>
@@ -94,6 +116,32 @@
         </a>
       </div>
     </div>
+    </div>
   </footer>
+  <script>
+    const root = document.documentElement;
+    const toggleButton = document.getElementById("theme-toggle");
+    const storedTheme = localStorage.getItem("theme");
+
+    const setTheme = (theme) => {
+      if (theme === "light") {
+        root.setAttribute("data-theme", "light");
+        toggleButton.setAttribute("aria-pressed", "true");
+      } else {
+        root.removeAttribute("data-theme");
+        toggleButton.setAttribute("aria-pressed", "false");
+      }
+    };
+
+    setTheme(storedTheme || "dark");
+
+    toggleButton.addEventListener("click", () => {
+      const nextTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      localStorage.setItem("theme", nextTheme);
+      setTheme(nextTheme);
+    });
+  </script>
 </body>
 </html>
+
+
