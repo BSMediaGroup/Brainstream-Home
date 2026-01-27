@@ -527,7 +527,7 @@ main {
 
 @media (min-width: 721px) {
   main > .page > section:first-of-type:not(.hero) {
-    margin-top: -30px;
+    margin-top: -12px;
   }
 }
 
