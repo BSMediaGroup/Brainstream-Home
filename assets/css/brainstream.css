@@ -1589,6 +1589,7 @@ section h2 {
   }
 
   .project-external-link {
+    justify-content: flex-start;
     margin-top: 6px;
     margin-bottom: 10px;
   }
