@@ -213,11 +213,12 @@ img {
   font-family: "SuiGeneris", system-ui, -apple-system, sans-serif;
   font-size: 0.78rem;
   color: var(--muted);
+  opacity: 0.95;
 }
 
 .breadcrumbs[aria-label="Breadcrumb"] {
   position: relative;
-  opacity: 0.85;
+  opacity: 0.95;
 }
 
 .breadcrumbs ol {
@@ -954,6 +955,26 @@ section h2 {
   margin: 10px 0 6px;
 }
 
+.project-external-link {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -2.1rem;
+  margin-bottom: 12px;
+}
+
+.project-external-link a {
+  font-size: 0.9rem;
+  font-family: "SuiGeneris", system-ui, -apple-system, sans-serif;
+  color: var(--muted);
+  opacity: 0.7;
+  line-height: 1.1;
+}
+
+.project-external-link a:hover,
+.project-external-link a:focus {
+  opacity: 1;
+}
+
 .detail-surface {
   margin-top: -12px;
   padding: 28px clamp(18px, 3vw, 34px);
@@ -1015,6 +1036,10 @@ section h2 {
 .detail-block-intro p {
   color: var(--text);
   font-size: 1rem;
+}
+
+.detail-docs {
+  margin-top: 12px;
 }
 
 .section-lead {
@@ -1558,6 +1583,15 @@ section h2 {
   .detail-block-intro {
     padding: 18px 16px;
   }
+
+  .project-external-link {
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+}
+
+[data-theme="light"] .breadcrumbs {
+  opacity: 1;
 }
 
 /* -------------------------------------------------
