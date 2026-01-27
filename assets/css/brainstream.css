@@ -970,6 +970,12 @@ section h2 {
   margin-top: auto;
 }
 
+.card-cta {
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: auto;
+}
+
 @media (hover: hover) and (pointer: fine) {
   #projects .card {
     position: relative;
