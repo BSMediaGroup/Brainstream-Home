@@ -213,6 +213,11 @@ img {
   color: var(--muted);
 }
 
+.breadcrumbs[aria-label="Breadcrumb"] {
+  position: relative;
+  opacity: 0.85;
+}
+
 .breadcrumbs ol {
   list-style: none;
   display: flex;
@@ -220,6 +225,24 @@ img {
   gap: 6px;
   padding: 0;
   margin: 0;
+}
+
+.breadcrumbs[aria-label="Breadcrumb"] ol {
+  position: relative;
+  z-index: 0;
+}
+
+.breadcrumbs[aria-label="Breadcrumb"] ol::before {
+  content: "";
+  position: absolute;
+  inset: -6px -12px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  opacity: 0.7;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .breadcrumbs li {
@@ -947,6 +970,45 @@ section h2 {
   margin-top: auto;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  #projects .card {
+    position: relative;
+  }
+
+  #projects .card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 18% 22%, rgba(140, 121, 255, 0.22), transparent 55%),
+      radial-gradient(circle at 82% 78%, rgba(211, 139, 255, 0.22), transparent 58%);
+    box-shadow:
+      inset 0 0 0 1px rgba(140, 121, 255, 0.18),
+      inset 0 0 22px rgba(140, 121, 255, 0.18),
+      inset 0 0 34px rgba(211, 139, 255, 0.16);
+    transition: opacity 0.35s ease;
+  }
+
+  #projects .card:hover::after {
+    opacity: 1;
+  }
+
+  #projects .card:hover,
+  #projects .card:focus-within {
+    transform: none;
+    border-color: var(--border);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #projects .card::after {
+    transition: none;
+  }
+}
+
 .list {
   display: grid;
   gap: 14px;
@@ -1115,6 +1177,7 @@ section h2 {
   gap: 16px;
   align-items: center;
   justify-content: flex-end;
+  align-self: center;
 }
 
 .social-link {
@@ -1185,6 +1248,7 @@ section h2 {
 
   .social-links {
     justify-content: flex-start;
+    align-self: flex-start;
   }
 }
 
