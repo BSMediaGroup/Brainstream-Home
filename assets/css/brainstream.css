@@ -944,6 +944,76 @@ section h2 {
   margin-bottom: 16px;
 }
 
+.detail-page h1 {
+  font-family: "Recharge", sans-serif;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  letter-spacing: 0.02em;
+  margin: 10px 0 6px;
+}
+
+.detail-surface {
+  margin-top: -12px;
+  padding: 28px clamp(18px, 3vw, 34px);
+  background:
+    linear-gradient(180deg, rgba(140, 121, 255, 0.08), rgba(10, 12, 18, 0)),
+    var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+[data-theme="light"] .detail-surface {
+  background:
+    linear-gradient(180deg, rgba(76, 62, 255, 0.08), rgba(255, 255, 255, 0)),
+    var(--surface);
+}
+
+.detail-block {
+  padding: 18px 0;
+}
+
+.detail-block + .detail-block {
+  border-top: 1px solid rgba(121, 133, 176, 0.18);
+  margin-top: 6px;
+}
+
+.detail-block h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.detail-surface p,
+.detail-surface ul {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.detail-surface ul {
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.detail-block-intro {
+  position: relative;
+  padding: 20px 20px 18px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(140, 121, 255, 0.12), rgba(140, 121, 255, 0.02));
+  border: 1px solid rgba(140, 121, 255, 0.18);
+}
+
+[data-theme="light"] .detail-block-intro {
+  background: linear-gradient(135deg, rgba(76, 62, 255, 0.12), rgba(255, 255, 255, 0.6));
+  border-color: rgba(76, 62, 255, 0.2);
+}
+
+.detail-block-intro p {
+  color: var(--text);
+  font-size: 1rem;
+}
+
 .section-lead {
   color: var(--muted);
   font-size: 0.9rem;
@@ -1380,6 +1450,15 @@ section h2 {
   .social-links {
     justify-content: flex-start;
     align-self: flex-start;
+  }
+
+  .detail-surface {
+    margin-top: -8px;
+    padding: 22px 18px;
+  }
+
+  .detail-block-intro {
+    padding: 18px 16px;
   }
 }
 
