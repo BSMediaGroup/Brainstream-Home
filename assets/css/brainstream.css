@@ -1548,15 +1548,20 @@ section h2 {
   }
 
   main {
-    padding-top: 12px;
+    padding-top: 8px;
   }
 
   .hero {
     grid-template-columns: 1fr;
+    margin-top: 16px;
   }
 
   .project-banner {
     max-height: 220px;
+  }
+
+  .breadcrumbs {
+    margin-top: 4px;
   }
 
   .header-inner {
