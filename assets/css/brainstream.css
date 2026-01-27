@@ -1547,6 +1547,10 @@ section h2 {
     opacity: 0.024;
   }
 
+  main {
+    padding-top: 12px;
+  }
+
   .hero {
     grid-template-columns: 1fr;
   }
@@ -1587,6 +1591,15 @@ section h2 {
   .project-external-link {
     margin-top: 6px;
     margin-bottom: 10px;
+  }
+
+  .list-item .tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
 
