@@ -295,6 +295,7 @@ img {
   flex-direction: column;
   gap: 12px;
   box-shadow: var(--shadow);
+  position: relative;
 }
 
 .directory-card-header {
@@ -326,6 +327,24 @@ img {
   color: var(--accent);
   font-weight: 600;
   text-decoration: none;
+}
+
+.directory-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.directory-card > * {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.directory-card .directory-link {
+  pointer-events: auto;
+  z-index: 3;
 }
 
 .status-pill {
