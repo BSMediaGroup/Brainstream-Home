@@ -10,6 +10,25 @@
 <meta name="msvalidate.01" content="" />
 <link rel="stylesheet" href="../assets/css/brainstream.css" />
 <style>
+  html:not([data-theme="light"]) nav.breadcrumbs,
+  html:not([data-theme="light"]) nav.breadcrumbs a {
+    color: rgba(235, 240, 252, 0.72);
+  }
+
+  html:not([data-theme="light"]) nav.breadcrumbs [aria-current="page"] {
+    color: rgba(245, 248, 255, 0.9);
+  }
+
+  html[data-theme="light"] nav.breadcrumbs,
+  html[data-theme="light"] nav.breadcrumbs a {
+    color: rgba(24, 30, 44, 0.7);
+  }
+
+  html[data-theme="light"] nav.breadcrumbs [aria-current="page"] {
+    color: rgba(18, 22, 36, 0.86);
+  }
+</style>
+<style>
   .directory-card > .directory-card-overlay {
     position: absolute;
     inset: 0;
