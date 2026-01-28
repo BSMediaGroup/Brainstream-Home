@@ -21,7 +21,7 @@
     },
     {
       key: "streamsuites",
-      imageSrc: "assets/illustrations/ssblueshield.webp",
+      imageSrc: "assets/illustrations/ssicon.webp",
       tagline: "Powering StreamSuites™, the next-generation creator platform.",
       accent: null
     },
